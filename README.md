@@ -25,6 +25,19 @@ Python3 должен быть уже установлен.
 pip install -r requirements.txt
 ```
 
+### Как использовать
+Приложение принимает ссылку в качестве аргумента при запуске.
+Чтобы сократить ссылку, нужно запустить `main.py` передав первым аргументом ссылку которую нужно сократить
+
+```
+python main.py python main.py https://devman.org/encyclopedia/git/git_project_publishing_checklist/
+```
+
+Чтобы получить статистику переходов по короткой ссылке, нужно передать ее в качестве аргумента при запуске
+```
+python main.py python main.py http://bit.ly/2K31hVw
+```
+
 ### Цель проекта
 
 git remote add origin url-to-your-remoteКод написан в образовательных целях на онлайн-курсе для веб-разработчиков [dvmn.org](https://dvmn.org/).
