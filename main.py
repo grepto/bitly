@@ -5,12 +5,6 @@ from datetime import datetime
 import requests
 from dotenv import load_dotenv
 
-parser = argparse.ArgumentParser(
-    description='Программа сокращает длинные ссылки и показывает статистику переходов'
-)
-parser.add_argument('link', help='Длинная ссылка для сокращения или короткая для получения статистики')
-args = parser.parse_args()
-
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
 BASE_URL = 'https://api-ssl.bitly.com/v4/'
@@ -53,6 +47,12 @@ def get_clicks(link):
 
 
 if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(
+        description='Программа сокращает длинные ссылки и показывает статистику переходов'
+    )
+    parser.add_argument('link', help='Длинная ссылка для сокращения или короткая для получения статистики')
+    args = parser.parse_args()
     link = args.link
 
     bitlink = link.replace('http://', '').replace('https://', '')
